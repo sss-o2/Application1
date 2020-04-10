@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   def index
+  	@blogs=Blog.all#コントローラとview間で使う変数は@つける。全データなので複数形。
   end
 
   def show
