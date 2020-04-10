@@ -27,6 +27,12 @@ class BlogsController < ApplicationController
   	redirect_to blog_path(blog)
   end
 
+  def destroy
+  	blog=Blog.find()#ビューからデータをもらってくるわけではないので＠不要（フォームないし）
+  	blog.destroy
+  	redirect_to blogs_path
+  end
+
   private
   def blog_params
   	params.require(:blog).permit(:title, :category, :body)
